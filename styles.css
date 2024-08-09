@@ -25,6 +25,7 @@ html{
 
 body{
     background: #333;
+    height: 3000px;
 }
 
 header{
@@ -39,6 +40,7 @@ header{
     justify-content: space-between;
     padding: 1rem 2rem;
     z-index: 10;
+    transition: .2s;
 }
 
 header .navbar ul{
@@ -69,4 +71,66 @@ header .logo{
 header .fa-graduation-cap{
     color: var(--pink);
     font-size: 3rem;
+}
+header .fa-bars{
+    font-size: 3rem;
+    color:var(--pink);
+    cursor: pointer;
+    display: none;
+}
+header .fa-times{
+    transform: rotate(180deg);
+    color: var(--violet);
+    transition: 1s;
+}
+.header-active{
+    top:0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+/* meadia query  */
+
+@media(max-width:768px){
+    html{
+        font-size: 55%;
+    }
+    header .fa-bars{
+        display: block;
+    }
+    header .navbar{
+        position: fixed;
+        top:-100rem;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-radius: 1rem;
+        opacity: 0;
+        transition: linear;
+    }
+    header .navbar ul{
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .navbar ul li{
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    header .navbar ul a{
+        font-size: 3rem;
+        display: block;
+    }
+
+    header .nav-toggle{
+        top:5.5rem;
+        opacity: 1;
+    }
 }
